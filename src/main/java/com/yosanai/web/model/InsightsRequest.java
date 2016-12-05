@@ -1,5 +1,8 @@
 package com.yosanai.web.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class InsightsRequest {
 	protected String country;
 	protected String sector;
