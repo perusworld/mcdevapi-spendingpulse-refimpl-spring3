@@ -1,5 +1,5 @@
-# Mastercard Developer API - ATM Locations - Reference Implementation - Angular/Spring 3.x #
-Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - ATM Locations 
+# Mastercard Developer API - Retail Location Insights - Reference Implementation - Angular/Spring 3.x #
+Spring 3.x/Maven based reference implementation of Mastercard Developer API - Retail Location Insights 
 
 ## Requirements ##
 1. JDK 1.7+
@@ -32,10 +32,11 @@ mvn clean package
 Open browser and goto [http://localhost:3000](http://localhost:3000)
 
 ## Test REST APIs -cURL ##
-### ATMs nearby ###
+### Query retail unit census information using unitType/unitId/country sent as part of JSON post ###
 ```bash
 curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
-	"latitude": 40.737920,
-	"longitude": -73.992781
-}' "http://localhost:3000/atmsNearby"
+	"country": "USA",
+	"pageOffset": 1,
+	"pageLength": 10
+}' "http://localhost:3000/retailUnits"
 ```
