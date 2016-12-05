@@ -1,5 +1,5 @@
 # Mastercard Developer API - Retail Location Insights - Reference Implementation - Angular/Spring 3.x #
-Spring 3.x/Maven based reference implementation of Mastercard Developer API - Retail Location Insights 
+Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - Retail Location Insights 
 
 ## [Demo](https://perusworld.github.io/mcdevapi-rli-refimpl-web/) ##
 
