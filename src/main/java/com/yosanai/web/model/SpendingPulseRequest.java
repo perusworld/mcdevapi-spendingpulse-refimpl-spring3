@@ -3,12 +3,11 @@ package com.yosanai.web.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InsightsRequest {
+public class SpendingPulseRequest extends BaseRequest {
 	protected String country;
-	protected String sector;
 	protected String period;
 
-	public InsightsRequest() {
+	public SpendingPulseRequest() {
 	}
 
 	public String getCountry() {
@@ -17,14 +16,6 @@ public class InsightsRequest {
 
 	public void setCountry(String country) {
 		this.country = country;
-	}
-
-	public String getSector() {
-		return sector;
-	}
-
-	public void setSector(String sector) {
-		this.sector = sector;
 	}
 
 	public String getPeriod() {

@@ -1,7 +1,7 @@
-# Mastercard Developer API - Sector Insights - Reference Implementation - Angular/Spring 3.x #
-Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - Sector Insights 
+# Mastercard Developer API - Spending Pulse - Reference Implementation - Angular/Spring 3.x #
+Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - Spending Pulse 
 
-## [Demo](https://perusworld.github.io/mcdevapi-sector-insights-web/) ##
+## [Demo](https://perusworld.github.io/mcdevapi-spendingpulse-refimpl-web/) ##
 
 ## Requirements ##
 1. JDK 1.7+
@@ -10,7 +10,7 @@ Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer 
    
 
 ## Setup Client App (optional if you want to host the sample client app) ##
-This setups up the same client app that is being used in [Mastercard Developer API - Sector Insights - Reference Implementation - Angular/Express](https://github.com/perusworld/mcdevapi-sector-insights-web)
+This setups up the same client app that is being used in [Mastercard Developer API - Spending Pulse - Reference Implementation - Angular/Express](https://github.com/perusworld/mcdevapi-spendingpulse-refimpl-web)
 
 ```bash
 git submodule init
@@ -34,16 +34,36 @@ mvn clean package
 Open browser and goto [http://localhost:3000](http://localhost:3000)
 
 ## Test REST APIs -cURL ##
-### Query insights using sector/period/country sent as part of JSON post ###
+### Query spending pulse reports using period/country sent as part of JSON post ###
 ```bash
 curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
+	"currentRow": 1,
+	"offset": 25,
 	"country": "US",
-	"sector": "U.S. Natural and Organic Grocery Stores",
-	"period": "Monthly"
-}' "http://localhost:3000/insights"
+	"period": "Weekly"
+}' "http://localhost:3000/spendingPulse"
 ```
 
-### Query available reports ###
+### Query weekly gasoline report ###
 ```bash
-curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '' "http://localhost:3000/parameters"
+curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
+	"currentRow": 1,
+	"offset": 25
+}' "http://localhost:3000/gasWeekly"
+```
+
+### Query distinct list of reports subscribed to ###
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
+	"currentRow": 1,
+	"offset": 25
+}' "http://localhost:3000/parameters"
+```
+
+### Query available subscriptions ###
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
+	"currentRow": 1,
+	"offset": 25
+}' "http://localhost:3000/subscriptions"
 ```
