@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.yosanai.web</groupId>
-	<artifactId>spring-3-base</artifactId>
+	<artifactId>mcdevapi-atmlocator-refimpl-spring3</artifactId>
 	<version>0.1</version>
 	<packaging>war</packaging>
-	<name>spring-3-base</name>
-	<description>Maven Spring 3.x Web/REST App Base</description>
+	<name>mcdevapi-atmlocator-refimpl-spring3</name>
+	<description>Spring 3.x/Maven based reference implementation of Mastercard Developer API - ATM Locations</description>
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
@@ -14,6 +14,8 @@
 		<servletVersion>2.5</servletVersion>
 		<springVersion>3.2.17.RELEASE</springVersion>
 		<jacksonVersion>2.8.5</jacksonVersion>
+		<locationsVersion>1.0.3</locationsVersion>
+		<junitVersion>4.12</junitVersion>
 	</properties>
 	<build>
 		<plugins>
@@ -32,6 +34,22 @@
 		</plugins>
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>com.mastercard.api</groupId>
+			<artifactId>locations</artifactId>
+			<version>${locationsVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junitVersion}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
