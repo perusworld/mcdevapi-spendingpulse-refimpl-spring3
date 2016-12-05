@@ -1,6 +1,6 @@
 package com.yosanai.web.model;
 
-public class RLIRequest {
+public class RetailUnitRequest {
 
 	protected String country;
 
@@ -8,7 +8,7 @@ public class RLIRequest {
 
 	protected int pageOffset;
 
-	public RLIRequest() {
+	public RetailUnitRequest() {
 	}
 
 	public String getCountry() {
