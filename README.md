@@ -1,7 +1,7 @@
-# Mastercard Developer API - Retail Location Insights - Reference Implementation - Angular/Spring 3.x #
-Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - Retail Location Insights 
+# Mastercard Developer API - Sector Insights - Reference Implementation - Angular/Spring 3.x #
+Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer API - Sector Insights 
 
-## [Demo](https://perusworld.github.io/mcdevapi-rli-refimpl-web/) ##
+## [Demo](https://perusworld.github.io/mcdevapi-sector-insights-web/) ##
 
 ## Requirements ##
 1. JDK 1.7+
@@ -10,7 +10,7 @@ Spring 3.x/Maven/Angular based reference implementation of Mastercard Developer 
    
 
 ## Setup Client App (optional if you want to host the sample client app) ##
-This setups up the same client app that is being used in [Mastercard Developer API - Retail Location Insights - Reference Implementation - Angular/Express](https://github.com/perusworld/mcdevapi-rli-refimpl-web)
+This setups up the same client app that is being used in [Mastercard Developer API - Sector Insights - Reference Implementation - Angular/Express](https://github.com/perusworld/mcdevapi-sector-insights-web)
 
 ```bash
 git submodule init
@@ -34,32 +34,16 @@ mvn clean package
 Open browser and goto [http://localhost:3000](http://localhost:3000)
 
 ## Test REST APIs -cURL ##
-### Query MasterCard Retail Location Scores using unitType/unitId/country sent as part of JSON post ###
+### Query insights using sector/period/country sent as part of JSON post ###
 ```bash
 curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
-	"country": "USA",
-	"pageOffset": 1,
-	"pageLength": 10,
-	"unitType": "STATE",
-	"unitId": "06"
-}' "http://localhost:3000/metrics"
+	"country": "US",
+	"sector": "U.S. Natural and Organic Grocery Stores",
+	"period": "Monthly"
+}' "http://localhost:3000/insights"
 ```
 
-### Query retail unit census information using country sent as part of JSON post ###
+### Query available reports ###
 ```bash
-curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
-	"country": "USA",
-	"pageOffset": 1,
-	"pageLength": 10
-}' "http://localhost:3000/retailUnits"
-```
-
-### Query available merchant industry codes ###
-```bash
-curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '' "http://localhost:3000/industries"
-```
-
-### Query available subscriptions ###
-```bash
-curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '' "http://localhost:3000/subscriptions"
+curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '' "http://localhost:3000/parameters"
 ```
